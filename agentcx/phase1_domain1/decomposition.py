@@ -100,8 +100,8 @@ def prompt_chain(user_message: str) -> str:
     )
     print(f"  → {lookup}")
 
-    # Step 3: Process refund if classified as such  ← BUG is here
-    if "refund" in classification:
+    # Step 3: Process refund if classified as such
+    if "refund" in classification.lower():
         print("[step 3] Processing refund...")
         resolution = run_with_tools(
             system="Process the refund based on the case details provided.",
